@@ -2,26 +2,33 @@
 # as requests come in, place them into the waiting queue where they belong
 # third list for listing the planes that have taken off already
 # print off a list of each flight and their actual takeoff times
-from takeoffRequest import Requests as Rq
+# shows gaps in schedule or queue by __no_plane__
 
+import sys
+from inputPlaneFile import create_plane_list
+from planeSchedule import create_schedule
 
 def main():
-    plane_input = []
     plane_queue = []
-    timer = 0
 
-    print("Testing program")
-    simulator_file = open("input.txt", "r")
+    simulator_file = open(sys.argv[1], "r")
     simulator_data = simulator_file.readlines()
+    input_list_of_planes = create_plane_list(simulator_data)
 
-    for requests in simulator_data:
-        input_request = requests.split(",")
-        new_request = Rq(input_request[0], input_request[1], input_request[2], input_request[3])
-        plane_input.append(new_request)
+    # Pass list of planes into plane schedule to return schedule
+    timer = 0
+    create_schedule(input_list_of_planes, timer)
 
-    for single_request in plane_input:
-        print(single_request.get_name())
+    # checking to make sure data is inputted into Request Objects
+    for single_request in input_list_of_planes:
+        print(single_request.get_name(), single_request.get_takeoff_time())
 
 
 if __name__ == "__main__":
+    number_of_arguments = len(sys.argv)
+    if number_of_arguments == 1: # If there is only 1 argument then an input argument was not specified
+        print("Please specify an input file")
+        exit()
+    else:
+        print("There are", number_of_arguments, "arguments")
     main()
