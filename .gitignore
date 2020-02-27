@@ -1,0 +1,8 @@
+#ignore venv folder
+venv
+
+#ignore ide configuration folder
+*.idea
+
+#ignoring pycache
+__pycache__
