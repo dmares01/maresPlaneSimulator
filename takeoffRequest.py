@@ -36,5 +36,3 @@ class Requests:
 
     def set_takeoff_duration(self, new_takeoff_duration):
         self.takeoff_duration = new_takeoff_duration
-
-
