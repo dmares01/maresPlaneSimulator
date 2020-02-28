@@ -8,20 +8,19 @@ import sys
 from inputPlaneFile import create_plane_list
 from planeSchedule import create_schedule
 
-def main():
-    plane_queue = []
 
+def main():
     simulator_file = open(sys.argv[1], "r")
     simulator_data = simulator_file.readlines()
     input_list_of_planes = create_plane_list(simulator_data)
 
     # Pass list of planes into plane schedule to return schedule
     timer = 0
-    create_schedule(input_list_of_planes, timer)
+    plane_queue = create_schedule(input_list_of_planes, timer)
 
     # checking to make sure data is inputted into Request Objects
-    for single_request in input_list_of_planes:
-        print(single_request.get_name(), single_request.get_takeoff_time())
+    for plane in plane_queue:
+        print(plane.get_name(), plane.get_takeoff_time())
 
 
 if __name__ == "__main__":
