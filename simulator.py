@@ -10,24 +10,31 @@ from planeSchedule import create_schedule
 
 
 def main():
+    # Opening file, and inputting data into list
     simulator_file = open(sys.argv[1], "r")
     simulator_data = simulator_file.readlines()
     input_list_of_planes = create_plane_list(simulator_data)
 
-    # Pass list of planes into plane schedule to return schedule
+    # setting up timer and plane_queue to be used
     timer = 0
-    plane_queue = create_schedule(input_list_of_planes, timer)
+    plane_queue = []
+
+    # Pass list of planes into plane schedule to return schedule
+    while timer < 10:
+        plane_queue += create_schedule(input_list_of_planes, timer)
+        timer += 1
 
     # checking to make sure data is inputted into Request Objects
     for plane in plane_queue:
         print(plane.get_name(), plane.get_takeoff_time())
 
 
+# Function to only run code if file is original file that is called
 if __name__ == "__main__":
     number_of_arguments = len(sys.argv)
-    if number_of_arguments == 1: # If there is only 1 argument then an input argument was not specified
+    if number_of_arguments == 1:  # If there is only 1 argument then an input argument was not specified
         print("Please specify an input file")
         exit()
     else:
         print("There are", number_of_arguments, "arguments")
-    main()
+        main()
