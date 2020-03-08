@@ -1,5 +1,6 @@
-Delta 107,              0, 1, 2, 2
-Southwest 228,          1, 2, 6, 9
-Delta 23,               0, 2, 3, 1
-Frontier 40,            5, 9, 5, 7
-American Airlines 575,  2, 8, 3, 3
+Delta 107,              0, 1, 5
+Southwest 001,          0, 3, 3
+Southwest 228,          1, 2, 6
+Delta 23,               0, 2, 3
+Frontier 40,            5, 9, 5
+American Airlines 575,  2, 8, 3
