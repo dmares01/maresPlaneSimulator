@@ -13,16 +13,20 @@ def main():
     # Opening file, and inputting data into list
     simulator_file = open(sys.argv[1], "r")
     simulator_data = simulator_file.readlines()
-    input_list_of_planes = create_plane_list(simulator_data)
+    input_list_of_planes, largest_submit_time = create_plane_list(simulator_data)
 
     # setting up timer and plane_queue to be used
     timer = 0
     plane_queue = []
 
     # Pass list of planes into plane schedule to return schedule
-    while timer < 10:
-        plane_queue += create_schedule(input_list_of_planes, timer)
+    while timer <= largest_submit_time:
+        test = create_schedule(input_list_of_planes, timer, plane_queue)
+        if test != None:
+            plane_queue = test
+        print("The plane queue is ", plane_queue)
         timer += 1
+        print(timer)
 
     # checking to make sure data is inputted into Request Objects
     for plane in plane_queue:
