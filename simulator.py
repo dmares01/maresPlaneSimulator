@@ -24,13 +24,11 @@ def main():
         test = create_schedule(input_list_of_planes, timer, plane_queue)
         if test != None:
             plane_queue = test
-        print("The plane queue is ", plane_queue)
+        print("The plane queue for timer", timer, "is:")
+        for plane in plane_queue:
+            print(plane.get_name(), plane.get_takeoff_time())
+        print("")
         timer += 1
-        print(timer)
-
-    # checking to make sure data is inputted into Request Objects
-    for plane in plane_queue:
-        print(plane.get_name(), plane.get_takeoff_time())
 
 
 # Function to only run code if file is original file that is called
