@@ -4,6 +4,7 @@ class Requests:
         self.submission_time = 0
         self.takeoff_time = 0
         self.takeoff_duration = 0
+        self.actual_takeoff_time = 0
 
     def __init__(self, plane_name, submitted_time, requested_time, requested_duration):
         # do some thing here
@@ -11,6 +12,7 @@ class Requests:
         self.submission_time = submitted_time
         self.takeoff_time = requested_time
         self.takeoff_duration = requested_duration
+        self.actual_takeoff_time = 0
 
     def get_name(self):
         return self.name
@@ -24,6 +26,9 @@ class Requests:
     def get_takeoff_duration(self):
         return self.takeoff_duration
 
+    def get_actual_takeoff(self):
+        return self.actual_takeoff_time
+
 # Need setter functions as well
     def set_name(self, new_name):
         self.name = new_name
@@ -36,3 +41,6 @@ class Requests:
 
     def set_takeoff_duration(self, new_takeoff_duration):
         self.takeoff_duration = new_takeoff_duration
+
+    def set_actual_takeoff(self, actual_time):
+        self.actual_takeoff_time = actual_time
