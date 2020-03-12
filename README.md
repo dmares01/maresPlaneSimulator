@@ -4,7 +4,10 @@ are scheduled from there.
 
 This project imports the sys library as well as a number of functions from other files in the repo
 # How to Run
-This program must be one from the command line with the input file listed as an argument. If a file is not listed, the program will terminate without running any simulation.
+This program must be one from the command line with the input file listed as an argument.
+Navigate to the directory where the program is downloaded.
+**Please use the command *Python3 simulator.py "name of input file"*** to run the program.
+If a file is not listed, the program will terminate without running any simulation.
 Please run the program with Python 3, not Python 2
 
 # Author
