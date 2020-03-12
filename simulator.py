@@ -7,6 +7,8 @@
 import sys
 from inputPlaneFile import create_plane_list
 from planeSchedule import create_schedule
+from actualTimes import print_queue_to_file as print_queue
+from actualTimes import print_out_final
 
 
 def main():
@@ -20,15 +22,17 @@ def main():
     plane_queue = []
 
     # Pass list of planes into plane schedule to return schedule
-    while timer <= largest_submit_time:
+    output_file = open("mares_output.txt", 'w')
+    while timer <= 100000:
         test = create_schedule(input_list_of_planes, timer, plane_queue)
-        if test != None:
+        if test is not None:
             plane_queue = test
-        print("The plane queue for timer", timer, "is:")
-        for plane in plane_queue:
-            print(plane.get_name(), plane.get_takeoff_time())
-        print("")
+        print_queue(plane_queue, timer, output_file)
+        if len(plane_queue) == 0:
+            print_out_final(input_list_of_planes, output_file)
+            break
         timer += 1
+    output_file.close()
 
 
 # Function to only run code if file is original file that is called
@@ -38,5 +42,5 @@ if __name__ == "__main__":
         print("Please specify an input file")
         exit()
     else:
-        print("There are", number_of_arguments, "arguments")
+        # print("There are", number_of_arguments, "arguments")
         main()
