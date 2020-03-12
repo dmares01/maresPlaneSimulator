@@ -12,7 +12,7 @@ class Requests:
         self.submission_time = submitted_time
         self.takeoff_time = requested_time
         self.takeoff_duration = requested_duration
-        self.actual_takeoff_time = 0
+        self.actual_takeoff_time = requested_time
 
     def get_name(self):
         return self.name
