@@ -9,7 +9,6 @@ from inputPlaneFile import create_plane_list
 from planeSchedule import create_schedule
 from actualTimes import print_queue_to_file as print_queue
 from actualTimes import print_out_final
-from userGUI import browse_files
 
 
 
@@ -43,7 +42,7 @@ def main():
 if __name__ == "__main__":
     number_of_arguments = len(sys.argv)
     if number_of_arguments == 1:  # If there is only 1 argument then an input argument was not specified
-        sys.argv.append(browse_files())
+        from userGUI import browse_files
         main()
     else:
         main()
