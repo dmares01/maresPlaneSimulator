@@ -24,7 +24,8 @@ def main():
     plane_queue = []
 
     # Pass list of planes into plane schedule to return schedule
-    output_file = open("mares_output.txt", 'w')
+    output_file_name = "mares_output.txt"
+    output_file = open(output_file_name, 'w')
     while timer <= 100000:
         test = create_schedule(input_list_of_planes, timer, plane_queue)
         if test is not None:
@@ -35,16 +36,14 @@ def main():
             break
         timer += 1
     output_file.close()
+    print("Please open the output file " + output_file_name + " to see the results of the simulation.")
 
 
 # Function to only run code if file is original file that is called
 if __name__ == "__main__":
     number_of_arguments = len(sys.argv)
     if number_of_arguments == 1:  # If there is only 1 argument then an input argument was not specified
-        print("Please specify an input file")
         sys.argv.append(browseFiles())
         main()
-        exit()
     else:
-        # print("There are", number_of_arguments, "arguments")
         main()
