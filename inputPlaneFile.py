@@ -3,7 +3,8 @@
 # Created on: 02/27/2020
 from takeoffRequest import Requests
 
-
+# Taking the input from the input file and splitting each line into a Request variable that will then be used to simulate
+# the planes
 def create_plane_list(list_of_planes):
     plane_input = []
     largest_timer = 0
