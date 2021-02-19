@@ -1,9 +1,3 @@
-# need to read in data from a file and add planes to a waiting list
-# as requests come in, place them into the waiting queue where they belong
-# third list for listing the planes that have taken off already
-# print off a list of each flight and their actual takeoff times
-# shows gaps in schedule or queue by __no_plane__
-
 import sys
 from inputPlaneFile import create_plane_list
 from planeSchedule import create_schedule
