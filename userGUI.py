@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 import sys
 
+#create a file browser to select a file and then add it to the list of system arguments
 def browse_files():
     filename = filedialog.askopenfilename(initialdir = "/", title = "Select a File", filetypes = (("Text files",
                                                                                     "*.txt*"), ("all files","*.*")))
