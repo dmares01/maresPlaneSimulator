@@ -6,3 +6,6 @@ venv
 
 #ignoring pycache
 __pycache__
+
+#ignoring output file
+mares_output.txt
