@@ -6,7 +6,7 @@ first in first out style, as airports can not function that way. A plane may req
 the current time is only 4:30 pm. Many other planes can request times in between then, or may have more urgent requests.
 
 
-This project imports the sys library as well as a number of functions from other files in the repo
+This project imports the sys library, the tkinter library, as well as functions from other files in the repository.
 
 # How to Run
 This program must be run from the command line.
