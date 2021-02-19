@@ -14,7 +14,7 @@ def print_queue_to_file(plane_queue, timer, output):
             print(plane.get_name(), "took off at", plane.get_actual_takeoff(), "for",
                   plane.get_takeoff_duration(), "counts", file=output)
 
-        # Plane;s take off time is less than timer and is waiting to take off
+        # Plane's take off time is less than timer and is waiting to take off
         else:
             print(plane.get_name(), "will take off at", plane.get_actual_takeoff(), "for",
                   plane.get_takeoff_duration(), "counts", file=output)
